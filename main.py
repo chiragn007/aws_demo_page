@@ -85,8 +85,8 @@ st.markdown("""
 def get_s3_client():
     return boto3.client(
         's3',
-        aws_access_key_id='AKIASDRAM4P2EPXADLTA',
-        aws_secret_access_key='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'
+        aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+        aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY')
     )
 
 def upload_to_s3(file_obj, filename):
