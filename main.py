@@ -93,7 +93,7 @@ def get_s3_client():
 def upload_to_s3(file_obj, filename):
     try:
         s3_client = get_s3_client()
-        bucket_name = "input-data-stream"
+        bucket_name = "input-data-stream-nht"
         
         # Upload to S3
         s3_client.upload_fileobj(file_obj, bucket_name, filename)
@@ -106,7 +106,7 @@ def upload_to_s3(file_obj, filename):
 def get_json_content(filename):
     try:
         s3_client = get_s3_client()
-        json_bucket = "final-output1"
+        json_bucket = "final-output-nht"
         
         # Extract base name without extension
         base_name = filename.rsplit('.', 1)[0]
